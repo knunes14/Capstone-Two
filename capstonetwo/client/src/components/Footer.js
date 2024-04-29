@@ -119,7 +119,7 @@ const Footer = () => {
                 <Link to="/products/women" style={{ textDecoration: 'none', color: 'black'}}>Women's Wetsuits</Link>
             </ListItem>
             <ListItem>
-                <Link to="/account" style={{ textDecoration: 'none', color: 'black'}}>My Profile</Link>
+                <Link to="/" style={{ textDecoration: 'none', color: 'black'}}>My Profile</Link>
             </ListItem>
             <ListItem>
                 <Link to="/products" style={{ textDecoration: 'none', color: 'black'}}>All Products</Link>

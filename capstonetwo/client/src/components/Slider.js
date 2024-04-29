@@ -4,7 +4,7 @@ import ArrowBackIosNewOutlinedIcon from '@mui/icons-material/ArrowBackIosNewOutl
 import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined';
 import { sliderItems } from "../data";
 import { mobile } from '../responsive';
-
+import { Link } from 'react-router-dom';
 
 const Container = styled.div`
     width: 100%;
@@ -82,7 +82,6 @@ const Button = styled.button`
 `;
 
 
-
 const Slider = () => {
     const [slideIndex, setSlideIndex] = useState(0);
     const handleClick = (direction) => {
@@ -108,7 +107,9 @@ const Slider = () => {
                 <InfoContainer>
                     <Title>{item.title}</Title>
                     <Description>{item.desc}</Description>
-                    <Button >TRY IT OUT</Button>
+                    <Link to="/sizeform" style={{ textDecoration: 'none', fontWeight: 'bold', color: 'black' }}>
+                    <Button >FIND MY PERFECT FIT</Button>
+                    </Link>
                 </InfoContainer>
             </Slide>
             ))}
@@ -117,7 +118,7 @@ const Slider = () => {
             <ArrowForwardIosOutlinedIcon/>
         </Arrow>
     </Container>
-  )
-}
+  );
+};
 
-export default Slider
+export default Slider;
