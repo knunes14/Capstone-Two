@@ -1,4 +1,4 @@
-import mongoose from "mongoose";s
+const mongoose = require("mongoose");
 
 const SizeRangeSchema = new mongoose.Schema({
     size: { type: String, required: true },
