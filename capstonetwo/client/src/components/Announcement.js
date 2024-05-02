@@ -6,6 +6,7 @@ const Container = styled.div`
     color: black;
     font-weight: 500;
     font-size: 14px;
+    padding: 10px;
     background-color: #b7dbd6;
     display: flex;
     align-items: center;
@@ -15,7 +16,7 @@ const Container = styled.div`
 const Announcement = () => {
   return (
     <Container>
-        Try Our Dynamic <Link to="/sizeform" style={{ textDecoration: 'none', fontWeight: 'bold', color: 'black' }}> Wetsuit Sizing Tool </Link> Today! 
+        <Link to="/sizeform" style={{ textDecoration: 'none', fontWeight: 'bold', color: 'black' }}>CLICK HERE TO TRY OUR NEW WETSUIT RECOMMENDATION TOOL! #LOVEMATUSE</Link>
     </Container>
   );
 };

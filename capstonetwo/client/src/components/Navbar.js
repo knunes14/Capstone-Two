@@ -10,6 +10,7 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 
 const Container = styled.div`
     height: 60px;
+    padding: 10px;
     ${mobile({ height: "50px"})};
 `;
 
@@ -84,6 +85,9 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   console.log("Current User:", currentUser); // Log the current user's information
+
+  console.log("Cart quantity in Navbar:", quantity);
+
 
   const handleLogout = () => {
     logout(dispatch);

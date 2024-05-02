@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import RemoveOutlinedIcon from '@mui/icons-material/RemoveOutlined';
 import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
@@ -6,8 +6,9 @@ import Announcement from '../components/Announcement';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { mobile } from '../responsive';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { updateCart, clearCart } from '../redux/cartRedux';
 // import StripeCheckout from 'react-stripe-checkout';
 // import { useEffect, useState } from 'react';
 // import { userRequest } from '../requestMethods';
@@ -30,7 +31,7 @@ const Title = styled.h1`
 const Top = styled.div`
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding: 20px;
 `;
 
@@ -45,12 +46,14 @@ const TopButton = styled.button`
 
 const TopTexts = styled.div`
     ${mobile({ display: "none"})};
+    text-align: center;
 `;
 
 const TopText = styled.span`
     text-decoration: underline;
     cursor: pointer;
-    margin: 0px 10px;
+    margin: 0px 150px;
+    align-items: center;
 `;
 
 const Bottom = styled.div`
@@ -114,13 +117,13 @@ const ProductAmountContainer = styled.div`
 `;
 
 const ProductAmount = styled.div`
-    font-size: 24px;
+    font-size: 20px;
     margin: 5px;
     ${mobile({ margin: "5px 15px"})};
 `;
 
 const ProductPrice = styled.div`
-    font-size: 30px;
+    font-size: 24px;
     font-weight: 200;
     ${mobile({ marginBottom: "20px"})};
 `;
@@ -164,8 +167,40 @@ const Button = styled.button`
     cursor: pointer;
 `;
 
+const ClearCartButton = styled.button`
+    padding: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    border: ${props => props.type === "filled" && "none"};
+    background-color: ${props => props.type === "filled" ? "black" : "transparent"};
+    color: ${props => props.type === "filled" && "white"};
+`;
+
+
 const Cart = () => {
     const cart = useSelector((state) => state.cart);
+    const dispatch = useDispatch();
+
+    console.log("Cart state in Cart component:", cart);
+
+    // Load cart from local storage
+    // useEffect(() => {
+    //     const savedCart = localStorage.getItem('cart');
+    //     console.log("Loaded cart from localStorage:", savedCart);
+    //     if (savedCart) {
+    //         dispatch(updateCart(JSON.parse(savedCart)));
+    //     }
+    // }, [dispatch]);
+
+    // Save cart to local storage whenever it changes
+    // useEffect(() => {
+    //     localStorage.setItem('cart', JSON.stringify(cart));
+    // }, [cart]);
+
+    const handleClearCart = () => {
+        dispatch(clearCart());
+    };
+
     // const [stripeToken, setStripeToken] = useState(null);
     // const history = useHistory();
 
@@ -187,6 +222,9 @@ const Cart = () => {
     //     stripeToken && cart.total >=1 &&makeRequest();
     // }, [stripeToken, cart.total, history]);
 
+    // {cart.products.map(product => {
+    //     console.log(product);
+
   return (
     <Container>
       <Navbar/>
@@ -198,9 +236,9 @@ const Cart = () => {
                 <TopButton>CONTINUE SHOPPING</TopButton>
             </Link>
             <TopTexts>
-                <TopText>Shopping Bag ( {cart.quantity } )</TopText>
+                <TopText>SHOPPING BAG ( {cart.quantity } )</TopText>
+                <ClearCartButton onClick={handleClearCart}>CLEAR CART</ClearCartButton>
             </TopTexts>
-            <TopButton type="filled">CHECKOUT NOW</TopButton>
         </Top>
         <Bottom>
             <Info>
@@ -210,16 +248,16 @@ const Cart = () => {
                         <Image src= { product.img }/>
                         <Details>
                             <ProductName><b>Product: </b>{ product.title }</ProductName>
-                            {/* <ProductId><b>ID:</b> { product._id }</ProductId> */}
                             <ProductColor color="black"/>
-                            <ProductSize><b>Size: </b>{ product.selectedSize }</ProductSize>
+                            {/* <ProductSize><b>Size: </b>{ product.selectedSize }</ProductSize> */}
+                            <ProductSize><b>Size: </b>{ product.size }</ProductSize>
                         </Details>
                     </ProductDetail>
                     <PriceDetail>
                         <ProductAmountContainer>
-                            <AddOutlinedIcon/>
-                            <ProductAmount>{ product.quantity }</ProductAmount>
-                            <RemoveOutlinedIcon/>
+                            {/* <AddOutlinedIcon/> */}
+                            <ProductAmount>Quantity: { product.quantity }</ProductAmount>
+                            {/* <RemoveOutlinedIcon/> */}
                         </ProductAmountContainer>
                         <ProductPrice>$ { product.price * product.quantity }</ProductPrice>
                     </PriceDetail>
@@ -239,9 +277,8 @@ const Cart = () => {
                 </SummaryItem>
                 <SummaryItem type="total">
                     <SummaryItemText>Total</SummaryItemText>
-                    <SummaryItemPrice>$ { cart.total + 5.90 }</SummaryItemPrice>
+                    <SummaryItemPrice>$ { (cart.total + 5.90).toFixed(2) }</SummaryItemPrice>
                 </SummaryItem>
-                // THIS WILL BE UPDATED W/ STRIPE 
                 <Button>CHECKOUT NOW</Button>
             </Summary>
         </Bottom>

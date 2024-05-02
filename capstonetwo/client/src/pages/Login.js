@@ -36,6 +36,7 @@ const Form = styled.form`
 const Title = styled.h1`
     font-size: 24px;
     font-weight: 300;
+    margin-bottom: 10px;
 `;
 
 const Input = styled.input`
@@ -52,19 +53,19 @@ const Button = styled.button`
     background-color: teal;
     color: white;
     cursor: pointer;
-    margin-bottom: 10px;
+    margin-top: 20px;
     &:disabled{
         color: green;
         cursor: not-allowed;
     }
 `;
 
-const Link = styled.a`
-    margin: 5px 0px;
-    font-size: 12px;
-    text-decoration: underline;
-    cursor: pointer;
-`;
+// const Link = styled.a`
+//     margin: 5px 0px;
+//     font-size: 12px;
+//     text-decoration: underline;
+//     cursor: pointer;
+// `;
 
 const Error = styled.span`
     color: red;
@@ -103,8 +104,8 @@ const Login = () => {
                 <Input placeholder="password" type="password" onChange={(e)=>setPassword(e.target.value)}/>
                 <Button onClick={handleClick} disabled={isFetching}>LOGIN</Button>
                 {error &&<Error>Something went wrong...</Error>}
-                <Link>DO NOT YOU REMEMBER THE PASSWORD?</Link>
-                <Link>CREATE A NEW ACCOUNT</Link>
+                {/* <Link>DO NOT YOU REMEMBER THE PASSWORD?</Link>
+                <Link>CREATE A NEW ACCOUNT</Link> */}
             </Form>
         </Wrapper>
       

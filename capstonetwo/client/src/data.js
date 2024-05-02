@@ -9,8 +9,8 @@ export const sliderItems = [
     {
         id: 2,
         img: "https://www.matuse.com/cdn/shop/files/1132_Seager-12560-Edit2.jpg?v=1684170482",
-        title: "WETSUIT SIZING TOOL",
-        desc: "FIND YOUR PERFECT FIT #LOVEMATUSE",
+        title: "WETSUIT RECOMMENDATION TOOL",
+        desc: "FIND YOUR PERFECT WETSUIT FOR ANYTIME OF THE YEAR #LOVEMATUSE",
         bg: "fcf1ed",
     },
     {

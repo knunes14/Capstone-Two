@@ -1,0 +1,149 @@
+/* Global container settings to apply a full-page background */
+.wetsuit-results-container {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    /* height: 100vh; */
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0.5)
+    ),
+        url('https://scontent.cdninstagram.com/v/t39.30808-6/404647430_18399006001009960_4914283842342868267_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=18de74&_nc_ohc=o7XLVHkE9nUQ7kNvgECtSyp&_nc_ht=scontent.cdninstagram.com&edm=AM6HXa8EAAAA&oh=00_AfAg2GrR5Gck0otshm2voL1FiJHCn3UGB0CPSjFOcBkhwQ&oe=66350D38') center;
+    background-size: cover;
+    font-family: 'Arial', sans-serif;
+    position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Wrapper to center and contain the content in a styled box */
+.wrapper {
+    width: 100%;
+    max-width: 1200px; 
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    align-items: stretch;
+    gap: 20px; 
+}
+
+/* Consistent title styling */
+.title {
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 20px;
+}
+
+/* Styling for individual wetsuit cards */
+.wetsuit-card {
+    flex: 1; /* Flexibility of each card */
+    min-width: 250px; 
+    max-width: 300px; 
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    color: black;
+}
+
+.wetsuit-card h2 {
+    width: 100%;
+    color: black;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px; /* Add space below the title */
+}
+
+.wetsuit-card p {
+    color: black;
+    font-size: 16px;
+    line-height: 1.5;
+    width: 100%; 
+    padding: 0 5px; 
+}
+
+.wetsuit-card .separator {
+    height: 1px;
+    background-color: #ccc;
+    width: 90%; /* Adjust width as needed */
+    margin: 20px auto; /* Center the separator and add vertical spacing */
+}
+
+.wetsuit-card .purchase-button {
+    display: block; 
+    width: 50%; 
+    margin: 10px auto;
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: #27c390; 
+    color: white;
+    font-size: 16px; 
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-radius: 8px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease;
+}
+
+.wetsuit-card .purchase-button:hover {
+    background-color: #88d8b0; /* Slightly darker blue on hover */
+}
+
+
+/* Button styles consistent with the form */
+.button {
+    background-color: #277272;
+    color: white;
+    border: none;
+    width: 40%;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+    margin: 20px auto; 
+    padding: 15px 20px;
+}
+
+.button:hover {
+    background-color: #419694;
+}
+
+.button:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+/* Media query for responsiveness on smaller screens */
+@media (max-width: 600px) {
+    .wrapper {
+        width: 90%;
+        flex-direction: column; /* Stack cards vertically on small screens */
+    }
+    .button {
+        width: 80%; /* Adjust button width for small screens */
+    }
+}

@@ -35,6 +35,7 @@ const Form = styled.form`
 const Title = styled.h1`
     font-size: 24px;
     font-weight: 300;
+    margin-bottom: 10px;
 `;
 
 const Input = styled.input`
@@ -45,7 +46,12 @@ const Input = styled.input`
 `;
 
 const Button = styled.button`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
     width: 100%; // Full width for better UI
+    text-align: center;
     border: none;
     padding: 15px 20px;
     background-color: teal;

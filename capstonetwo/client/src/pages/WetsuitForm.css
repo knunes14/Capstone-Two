@@ -1,0 +1,93 @@
+.wetsuit-form-container {
+    background-image: url('https://scontent.cdninstagram.com/v/t39.30808-6/439586600_18429368434009960_3185039777796462627_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=18de74&_nc_ohc=mzRAVQ4RRf8Q7kNvgF7yBDL&_nc_ht=scontent.cdninstagram.com&edm=AM6HXa8EAAAA&oh=00_AfCA2cvOvpasTRGFN4GU6z36Gzuy6dnQUztkfxFk1FAAcw&oe=6635051F'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+    height: 100vh; 
+    display: flex; 
+    align-items: center; /* Center the form vertically */
+    justify-content: center; /* Center the form horizontally */
+}
+
+.wetsuit-form-container h1 {
+    text-align: center;
+    margin: 5px;
+    margin-bottom: 10px;
+}
+
+/* Form styling */
+.wetsuit-form-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    background-color: rgba(240, 244, 248, 0.85); /* Slightly transparent white */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+    margin: 20px; /* Reduced margin */
+    backdrop-filter: blur(10px); /* Optional: Adds blur effect behind the form */
+}
+
+.wetsuit-form-container label {
+    margin-bottom: 15px;
+    width: 80%; /* Set width of labels to ensure form controls are centered */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #333;
+    font-size: 16px;
+}
+
+.wetsuit-form-container input[type="number"],
+select {
+    width: 100%; /* Full width of the label container */
+    padding: 10px;
+    margin-top: 5px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.wetsuit-form-container button {
+    background-color: #277272;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+    width: 50%; /* Match the width of the form controls */
+}
+
+.wetsuit-form-container button:hover {
+    background-color: #419694;
+}
+
+.wetsuit-form-container button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.wetsuit-form-container p {
+    text-align: center;
+    margin-bottom: 15px;
+    color: black;
+    font-size: 16px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+    form {
+        width: 90%;
+    }
+    label {
+        width: 90%; /* Adjust label width for mobile devices */
+    }
+}
+

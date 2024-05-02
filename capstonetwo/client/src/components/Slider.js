@@ -108,7 +108,7 @@ const Slider = () => {
                     <Title>{item.title}</Title>
                     <Description>{item.desc}</Description>
                     <Link to="/sizeform" style={{ textDecoration: 'none', fontWeight: 'bold', color: 'black' }}>
-                    <Button >FIND MY PERFECT FIT</Button>
+                    <Button >FIND MY PERFECT WETSUIT</Button>
                     </Link>
                 </InfoContainer>
             </Slide>
